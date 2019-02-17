@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+	<meta charset="UTF-8">
+	<title> My App </title>
+	<link rel="stylesheet" type="text/css" href="css/style.css"  media="screen" />         
+	<script type="text/javascript" src="script/script.js" ></script>
+<head>
+
+<body>
+	<div id="divTop" class="divTop" >
+		<h1>Example CRUD</h1>
+	</div>
+	<div >
+		<div id="divFields" class="divFields">
+			<label>Name:</label><br>
+			<input id="name" type="text" placeholder="Type your name" name="name" autofocus ><br>
+			<label>Surname: </label><br>
+			<input id="surname" type="text" placeholder="Type your surname" name="surname"></p>			
+		</div>
+		<div id="divButtons" class="divButtons"   >                
+			<input id="sendData" class="sendData" type="button" onclick="sendData()" value="Send Data"  >
+			<input id="getData" class="getData"  type="button" onclick="getData()" value="Get Data"  >                
+			<input id="putData" class="putData" type="button" onclick="putData()" value="Put Data"  >
+			<input id="cleanData" class="cleanData" type="button" onclick="cleanData()" value="Clean Data"  >
+			<input id="deleteData" class="deleteData" type="button" onclick="deleteData()" value="Delete Data"  >
+		</div>
+	</div>
+	<div id="viewData"></div>
+</body>
+</html>

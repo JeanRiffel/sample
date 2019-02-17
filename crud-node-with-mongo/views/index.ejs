@@ -1,0 +1,17 @@
+<html>
+
+<p style="color:blue" >Result for customers:</>
+<ul class="quotes" style="color:red">
+	<% for(var i=0; i<quotes.length; i++) {%>
+		<li class="quote">			
+			<span style="color:blue" ><%= quotes[i].name %></span>
+			<span><%= quotes[i].surname %></span>
+		</li>
+	<% } %>
+</ul>
+
+<form action="/" method="GET">
+	<button type="submit">voltar</button>
+
+</form> 
+</html>
