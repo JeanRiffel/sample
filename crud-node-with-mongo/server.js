@@ -27,11 +27,6 @@ app.get('/', (req, res) => {
 	res.sendFile(__dirname + '/index.html')
 })
 
-app.get('/registerUser', (req, res) => {
-	res.sendFile(__dirname + '/registerUser.html')	
-})
-
-
 app.post('/sendData', (req, res) =>{
 	
 	console.log(req.body)
