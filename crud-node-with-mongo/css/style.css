@@ -1,5 +1,31 @@
 .divTop{
-    height: 100px;
+    position: static;
+    height: 120px;
     color: orange;
-    background-color: blue
+    background-color: blue;
+    text-align: center    
+}
+.divFields{
+    position: relative;
+    top : 2px;    
+    height: 100px;
+    background-color: silver;        
+}
+.divButtons{
+    position: relative;
+    top: 5px;    
+    height: 30px;
+    background-color: teal;    
+}
+.divButtons, .divFields{
+    width: 570px;
+    padding-top: 5px;
+    padding-left: 7px;
+    padding-bottom: 2px
+}
+.deleteData{
+    background-color: red;
+    color: white;
+    height: 30px;
+    width: 100px
 }
