@@ -18,9 +18,8 @@ MongoClient.connect(url,function (err, db){
 })
 
 app.set('view engine', 'ejs')
-
-app.use(bodyParser.urlencoded({extended:true}))
-
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
 app.use(express.static(__dirname + '/'));
 
 app.get('/', (req, res) => {
@@ -28,11 +27,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/sendData', (req, res) =>{
-	
-	console.log(req.body)
-
 	dbo.collection('customers').save(req.body, (err, result) => {
-
 		if (err) return console.log(err)
 		console.log('saved to databases')
 		res.redirect('/')
@@ -46,36 +41,23 @@ app.get('/getData', (req, res)=>{
 	})	
 })
 
-
-app.delete("/delData/:v1", (req, res) =>{
-    /*    const idx = req.params.v1
-    
-    for(var i = 0; i < DataArray.length; i++){
-        var obj = DataArray[i]
-
-        if (DataArray[i].idx == idx){
-            DataArray.pop(obj)
-            return
-        }
-    } */
+app.delete("/delData/:id", (req, res) =>{
+    let query = { id : req.params.id }        
+    dbo.collection("customers").deleteOne(query, function (err, obj){
+        if (err) throw err
+        console.log("1 document deleted")
+    })
 })
 
+app.put("/putData/:id", (req, res) => {            
+    let query = { id : req.params.id }
+    let newValues = { $set : { name : req.body.name, surname : req.body.surname }}
 
-
-app.put("/putData/:v1", (req, res) => {
-    /* const idx = req.params.v1
-    const name = req.body.name
-    const value = req.body.value
-    
-    for(var i = 0; i < DataArray.length; i++){
-        var obj = DataArray[i]
-
-        if (DataArray[i].idx == idx){
-            DataArray[i].name = name
-            DataArray[i].value = value
-            return
-        }
-    } */
+    dbo.collection("customers").updateOne(query, newValues, function(err, res){
+        if (err) throw err
+        console.log("1 document updated")
+        
+    })    
 })
 
 

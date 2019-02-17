@@ -2,7 +2,7 @@
 <html lang="en">
 <head> 
 	<meta charset="UTF-8">
-	<title> My App </title>
+	<title> My Crud with Mongo </title>
 	<link rel="stylesheet" type="text/css" href="css/style.css"  media="screen" />         
 	<script type="text/javascript" src="script/script.js" ></script>
 <head>
@@ -13,10 +13,12 @@
 	</div>
 	<div >
 		<div id="divFields" class="divFields">
+			<label>ID:</label><br>
+			<input id="id" type="text" placeholder="Type ID" name="id" autofocus /><br>
 			<label>Name:</label><br>
-			<input id="name" type="text" placeholder="Type your name" name="name" autofocus ><br>
+			<input id="name" type="text" placeholder="Type your name" name="name"  /><br>
 			<label>Surname: </label><br>
-			<input id="surname" type="text" placeholder="Type your surname" name="surname"></p>			
+			<input id="surname" type="text" placeholder="Type your surname" name="surname" /></p>			
 		</div>
 		<div id="divButtons" class="divButtons"   >                
 			<input id="sendData" class="sendData" type="button" onclick="sendData()" value="Send Data"  >
